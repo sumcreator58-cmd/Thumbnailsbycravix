@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRAVIX GFX | Premium Thumbnail Design Agency</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>CRAVIX Studio | Premium Thumbnail Design Agency</title>
     <style>
         /* === CSS VARIABLES & RESET === */
         :root {
-            --bg-color: #050505;
-            --text-color: #ffffff;
+            --bg-color: #0d0d0d;
+            --text-color: #f4f4f4;
             --text-muted: #a0a0a0;
-            --neon-lime: #bfff07;
-            --card-bg: rgba(25, 25, 25, 0.6); 
-            --grid-line: rgba(191, 255, 7, 0.04);
-            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #b5952f;
+            --card-bg: rgba(26, 26, 26, 0.6); /* Slightly transparent for depth */
+            --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             --premium-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -29,42 +29,17 @@
         }
 
         body {
-            background-color: var(--bg-color);
+            /* Premium deep gradient background */
+            background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, var(--bg-color) 60%, var(--bg-color) 100%);
             color: var(--text-color);
             font-family: var(--font-main);
             line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
-            /* Subtle Grid Background */
-            background-image: 
-                linear-gradient(var(--grid-line) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-
-        /* Continuous Moving Background Objects */
-        .bg-orb {
-            position: fixed;
-            width: 50vw;
-            height: 50vw;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(191, 255, 7, 0.06) 0%, transparent 70%);
-            filter: blur(100px);
-            z-index: -1;
-            animation: drift 25s infinite alternate ease-in-out;
-            pointer-events: none; /* Prevents clicking on the orbs */
-        }
-        .orb-1 { top: -10%; left: -10%; }
-        .orb-2 { bottom: -10%; right: -10%; animation-delay: -7s; }
-
-        @keyframes drift {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(100px, 50px) scale(1.1); }
         }
 
         /* Custom highlight color */
         ::selection {
-            background-color: var(--neon-lime);
+            background-color: var(--gold);
             color: #000;
         }
 
@@ -72,7 +47,6 @@
         h1, h2, h3 {
             line-height: 1.2;
             margin-bottom: 1rem;
-            letter-spacing: -0.5px;
         }
 
         p {
@@ -80,10 +54,13 @@
             color: var(--text-muted);
         }
 
-        /* Neon Text Effect */
-        .neon-text {
-            color: var(--neon-lime);
-            text-shadow: 0 0 25px rgba(191, 255, 7, 0.3);
+        /* Premium Gradient Text Effect */
+        .gold-text {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
         }
 
         .text-center {
@@ -97,34 +74,34 @@
             margin: 0 auto;
         }
 
-        /* Premium Neon Button */
+        /* Premium Button */
         .btn {
             display: inline-block;
-            background: var(--neon-lime);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             color: #000;
-            font-weight: 800;
+            font-weight: 700;
             text-decoration: none;
-            padding: 1rem 2.5rem;
-            border-radius: 50px; /* Pill shape like the crypto site */
+            padding: 1rem 2rem;
+            border-radius: 8px;
             transition: var(--premium-transition);
             cursor: pointer;
-            border: none;
+            border: 1px solid var(--gold-light);
             font-size: 1.1rem;
             width: 100%;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(191, 255, 7, 0.2);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
             -webkit-tap-highlight-color: transparent;
         }
 
         .btn:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(191, 255, 7, 0.4);
-            background: #cdff33; /* Slightly brighter on hover */
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            border-color: #fff;
         }
 
         .btn:active {
             transform: translateY(1px) scale(0.98);
-            box-shadow: 0 2px 10px rgba(191, 255, 7, 0.3);
+            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
         }
 
         /* === SCROLL ANIMATIONS === */
@@ -162,9 +139,8 @@
 
         .hero h1 {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
-            letter-spacing: -2px;
+            letter-spacing: -1px;
             margin-bottom: 0.5rem;
-            font-weight: 800;
         }
 
         .hero .subtitle {
@@ -175,7 +151,7 @@
 
         .hero .authority-line {
             font-size: 0.9rem;
-            color: var(--neon-lime);
+            color: var(--gold);
             font-weight: 600;
             margin-bottom: 3rem;
             letter-spacing: 1px;
@@ -205,9 +181,9 @@
             max-width: 800px;
             margin: 1.5rem auto;
             background: #000;
-            border: 1px solid rgba(191, 255, 7, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.5);
             border-radius: 12px;
-            box-shadow: 0 0 30px rgba(191, 255, 7, 0.1);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3), 0 0 80px rgba(212, 175, 55, 0.1);
             overflow: hidden;
             aspect-ratio: 16/9;
             position: relative;
@@ -216,12 +192,13 @@
 
         .video-container:hover {
             transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 0 40px rgba(191, 255, 7, 0.2), 0 15px 50px rgba(0, 0, 0, 0.8);
-            border-color: var(--neon-lime);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.5), 0 15px 50px rgba(0, 0, 0, 0.8);
+            border-color: var(--gold);
         }
 
         .video-container:active {
             transform: scale(0.98);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
         .video-container iframe, .video-container video {
@@ -251,7 +228,7 @@
             backdrop-filter: blur(10px);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid var(--neon-lime);
+            border-left: 4px solid var(--gold);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-right: 1px solid rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -263,7 +240,7 @@
         .stat-item:hover {
             transform: translateX(10px);
             background: rgba(40, 40, 40, 0.8);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), -5px 0 15px rgba(191, 255, 7, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), -5px 0 15px rgba(212, 175, 55, 0.1);
         }
 
         /* === SECTION 3: SELECTED WORK === */
@@ -287,8 +264,8 @@
 
         .thumbnail-wrapper:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(191, 255, 7, 0.15);
-            border-color: rgba(191, 255, 7, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.4);
             z-index: 2;
         }
 
@@ -340,13 +317,13 @@
 
         .pricing-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(191, 255, 7, 0.5);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(191, 255, 7, 0.1);
-            background: rgba(30, 30, 30, 0.8);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.1);
+            background: rgba(35, 35, 35, 0.8);
         }
 
         .pricing-card h3 {
-            color: var(--neon-lime);
+            color: var(--gold);
             font-size: 1.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 1rem;
@@ -373,7 +350,7 @@
 
         .pricing-card ul li::before {
             content: "✓";
-            color: var(--neon-lime);
+            color: var(--gold);
             position: absolute;
             left: 0;
             font-weight: bold;
@@ -397,7 +374,7 @@
             top: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--neon-lime);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             color: #000;
             font-size: 0.8rem;
             font-weight: 800;
@@ -406,18 +383,18 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(191, 255, 7, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
 
         .growth-card {
-            border-color: var(--neon-lime);
+            border-color: var(--gold);
             transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(191, 255, 7, 0.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
         }
         
         .growth-card:hover {
             transform: scale(1.04) translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(191, 255, 7, 0.15);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(212, 175, 55, 0.2);
         }
 
         /* === SECTION 6: CONTACT === */
@@ -431,7 +408,7 @@
         .contact-card {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(191, 255, 7, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 8px;
             padding: 1.5rem;
             text-decoration: none;
@@ -461,9 +438,9 @@
 
         .contact-card:hover {
             transform: translateY(-8px);
-            background: rgba(30, 30, 30, 0.9);
-            border-color: var(--neon-lime);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6), 0 0 15px rgba(191, 255, 7, 0.15);
+            background: rgba(40, 40, 40, 0.9);
+            border-color: var(--gold);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6), 0 0 15px rgba(212, 175, 55, 0.2);
         }
 
         .contact-card:active {
@@ -471,13 +448,13 @@
         }
 
         .contact-card h4 {
-            color: var(--neon-lime);
+            color: var(--gold);
             margin-bottom: 0.5rem;
             transition: var(--premium-transition);
         }
         
         .contact-card:hover h4 {
-            text-shadow: 0 0 10px rgba(191, 255, 7, 0.3);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
         }
 
         .contact-btn-wrapper {
@@ -492,7 +469,7 @@
             text-align: center;
             padding: 4rem 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: #030303;
+            background: #050505;
             position: relative;
         }
 
@@ -505,11 +482,11 @@
             transform: translateX(-50%);
             width: 50%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(191, 255, 7, 0.5), transparent);
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
         }
 
         footer h3 {
-            color: var(--neon-lime);
+            color: var(--gold);
             margin-bottom: 0.5rem;
             letter-spacing: 1px;
         }
@@ -538,7 +515,7 @@
                 flex: 1 1 calc(50% - 1.5rem);
             }
             .stat-item:hover {
-                transform: translateY(-10px);
+                transform: translateY(-10px); /* Lift up instead of right on desktop */
             }
             .pricing-grid {
                 flex-direction: row;
@@ -560,16 +537,13 @@
 </head>
 <body>
 
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-
     <section class="hero text-center">
-        <h1 class="neon-text reveal-up">CRAVIX GFX</h1>
+        <h1 class="gold-text reveal-up">CRAVIX Studio</h1>
         <p class="subtitle reveal-up" style="transition-delay: 0.1s;">Crafting High-Impact Thumbnails for Global Creators.</p>
         <p class="authority-line reveal-up" style="transition-delay: 0.2s;">2+ Years Experience • 400M+ Views Generated • 50+ Creators Served</p>
         
         <div class="video-wrapper reveal-up" style="transition-delay: 0.3s;">
-            <h3 class="neon-text">How CRAVIX GFX Helps Creators Dominate Click-Through Rate</h3>
+            <h3 class="gold-text">How CRAVIX Studio Helps Creators Dominate Click-Through Rate</h3>
             
             <div class="video-container">
                 <video poster="https://picsum.photos/800/450?grayscale&blur=2" controls>
@@ -587,9 +561,9 @@
     </section>
 
     <section id="authority">
-        <h2 class="reveal-up text-center neon-text">Performance Backed by Results.</h2>
+        <h2 class="reveal-up text-center gold-text">Performance Backed by Results.</h2>
         <div class="reveal-up text-center" style="transition-delay: 0.1s;">
-            <p>At CRAVIX GFX, every thumbnail is designed with one objective — performance.</p>
+            <p>At CRAVIX Studio, every thumbnail is designed with one objective — performance.</p>
             <p>We don’t just create visuals. We engineer attention.</p>
             <p>Over the past two years, our designs have supported creators across gaming, finance, and lifestyle niches — helping them generate over 400 million combined views.</p>
             <p>Our approach blends design psychology, niche research, and market positioning to ensure every thumbnail competes at the highest level.</p>
@@ -604,7 +578,7 @@
     </section>
 
     <section id="work" class="text-center">
-        <h2 class="reveal-up neon-text">Selected Work</h2>
+        <h2 class="reveal-up gold-text">Selected Work</h2>
         <p class="reveal-up" style="transition-delay: 0.1s;">A curated showcase of high-impact visual executions.</p>
 
         <div class="work-grid">
@@ -622,15 +596,15 @@
     </section>
 
     <section id="about" class="text-center about-text">
-        <h2 class="reveal-up neon-text">About CRAVIX GFX</h2>
-        <p class="reveal-up" style="transition-delay: 0.1s;">CRAVIX GFX is a performance-driven thumbnail design agency focused on helping creators stand out in competitive digital environments.</p>
+        <h2 class="reveal-up gold-text">About CRAVIX Studio</h2>
+        <p class="reveal-up" style="transition-delay: 0.1s;">CRAVIX Studio is a performance-driven thumbnail design agency focused on helping creators stand out in competitive digital environments.</p>
         <p class="reveal-up" style="transition-delay: 0.2s;">We specialize in crafting bold, high-CTR thumbnails tailored for gaming channels, finance educators, business creators, and lifestyle influencers targeting global audiences.</p>
         <p class="reveal-up" style="transition-delay: 0.3s;">We believe thumbnails are not just images. They are entry points to your content — and entry points determine growth.</p>
     </section>
 
     <section id="pricing">
         <div class="text-center">
-            <h2 class="reveal-up neon-text">Investment</h2>
+            <h2 class="reveal-up gold-text">Investment</h2>
             <p class="reveal-up" style="transition-delay: 0.1s;">Simple, transparent pricing designed for creators at every stage.</p>
         </div>
 
@@ -674,7 +648,7 @@
     </section>
 
     <section id="contact" class="text-center">
-        <h2 class="reveal-up neon-text">Ready to Elevate Your Click-Through Rate?</h2>
+        <h2 class="reveal-up gold-text">Ready to Elevate Your Click-Through Rate?</h2>
         <p class="reveal-up" style="transition-delay: 0.1s;">If you're serious about growth, it’s time to treat your thumbnails like assets — not afterthoughts.<br>Let’s build visuals that demand attention.</p>
         
         <div class="contact-btn-wrapper reveal-up" style="transition-delay: 0.2s;">
@@ -698,10 +672,10 @@
     </section>
 
     <footer>
-        <h3 class="neon-text">CRAVIX GFX</h3>
+        <h3 class="gold-text">CRAVIX Studio</h3>
         <p>Premium Thumbnail Design Agency</p>
         <p>Serving Creators Worldwide</p>
-        <p class="copyright">&copy; 2026 CRAVIX GFX. All Rights Reserved.</p>
+        <p class="copyright">&copy; 2026 CRAVIX Studio. All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -729,4 +703,4 @@
         });
     </script>
 </body>
-</html>
+                </html>
