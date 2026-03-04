@@ -80,7 +80,8 @@
 
         /* === LAYOUT & UTILITIES === */
         section {
-            padding: 5rem 1.5rem; 
+            /* Reduced general padding so mobile spacing isn't huge */
+            padding: 3rem 1.5rem; 
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -139,26 +140,17 @@
 
         /* === SECTION 1: HERO === */
         .hero {
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 2rem 1rem; 
+            /* Significantly reduced top padding to fix the top gap */
+            padding: 2rem 1rem 3rem 1rem; 
         }
 
         .hero .subtitle {
             font-size: clamp(1.1rem, 4vw, 1.5rem);
             color: var(--text-color);
-            margin-bottom: 0.5rem; /* Reduced to fit the new line */
-        }
-
-        .hero .authority-line {
-            font-size: 1.1rem;
-            color: var(--gold);
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 3.5rem; /* Creates the balanced gap down to the video */
+            margin-bottom: 2rem; /* Adjusted for perfect breathing room */
         }
 
         .video-wrapper {
@@ -170,7 +162,7 @@
 
         .video-wrapper h3 {
             font-size: 1.2rem;
-            margin-top: 0; 
+            margin-top: 0; /* REMOVED HIDDEN BROWSER MARGIN */
             margin-bottom: 1rem;
             max-width: 600px;
         }
@@ -549,7 +541,6 @@
     <section class="hero text-center">
         <h1 class="brand-title reveal-up">CRAVIX GFX</h1>
         <p class="subtitle reveal-up" style="transition-delay: 0.1s;">Crafting High Impact Thumbnails for Global Creators.</p>
-        <p class="authority-line reveal-up" style="transition-delay: 0.2s;">30M+ Views on Top Projects</p>
         
         <div class="video-wrapper reveal-up" style="transition-delay: 0.3s;">
             <h3 class="gold-text">How CRAVIX GFX Helps Creators Dominate Click Through Rate</h3>
@@ -580,7 +571,7 @@
 
         <div class="authority-stats">
             <div class="stat-item reveal-up" style="transition-delay: 0.2s;">2+ Years Experience</div>
-            <div class="stat-item reveal-up" style="transition-delay: 0.3s;">30M+ Views on Top Projects</div>
+            <div class="stat-item reveal-up" style="transition-delay: 0.3s;">400M+ Views Generated</div>
             <div class="stat-item reveal-up" style="transition-delay: 0.4s;">50+ Creators Served</div>
             <div class="stat-item reveal-up" style="transition-delay: 0.5s;">Performance Focused Strategy</div>
         </div>
