@@ -80,7 +80,7 @@
 
         /* === LAYOUT & UTILITIES === */
         section {
-            /* Reduced general padding so mobile spacing isn't huge */
+            /* FIX: Tighter padding for mobile so gaps aren't huge */
             padding: 3rem 1.5rem; 
             max-width: 1200px;
             margin: 0 auto;
@@ -140,17 +140,25 @@
 
         /* === SECTION 1: HERO === */
         .hero {
+            /* FIX: Removed min-height: 100vh so the top gap disappears */
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Significantly reduced top padding to fix the top gap */
-            padding: 2rem 1rem 3rem 1rem; 
+            padding: 3rem 1rem 2rem 1rem; 
         }
 
         .hero .subtitle {
             font-size: clamp(1.1rem, 4vw, 1.5rem);
             color: var(--text-color);
-            margin-bottom: 2rem; /* Adjusted for perfect breathing room */
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .authority-line {
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 2.5rem; /* Balanced space before the video */
         }
 
         .video-wrapper {
@@ -162,7 +170,7 @@
 
         .video-wrapper h3 {
             font-size: 1.2rem;
-            margin-top: 0; /* REMOVED HIDDEN BROWSER MARGIN */
+            margin-top: 0; 
             margin-bottom: 1rem;
             max-width: 600px;
         }
@@ -216,8 +224,8 @@
         .authority-stats {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 1.2rem; /* Tighter gap */
+            margin-top: 1.5rem; /* Tighter margin */
         }
 
         .stat-item {
@@ -244,8 +252,8 @@
         .work-grid {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 1.5rem; /* Tighter gap between thumbnails on mobile */
+            margin-top: 1.5rem; /* FIX: Removes big gap below paragraph */
         }
 
         .thumbnail-wrapper {
@@ -299,7 +307,7 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 1.5rem; /* Tighter gap */
         }
 
         .pricing-card {
@@ -399,7 +407,7 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            margin-top: 3rem;
+            margin-top: 1.5rem; /* Tighter gap */
         }
 
         .contact-card {
@@ -541,6 +549,7 @@
     <section class="hero text-center">
         <h1 class="brand-title reveal-up">CRAVIX GFX</h1>
         <p class="subtitle reveal-up" style="transition-delay: 0.1s;">Crafting High Impact Thumbnails for Global Creators.</p>
+        <p class="authority-line reveal-up" style="transition-delay: 0.2s;">30M+ Views on Top Projects</p>
         
         <div class="video-wrapper reveal-up" style="transition-delay: 0.3s;">
             <h3 class="gold-text">How CRAVIX GFX Helps Creators Dominate Click Through Rate</h3>
@@ -571,7 +580,7 @@
 
         <div class="authority-stats">
             <div class="stat-item reveal-up" style="transition-delay: 0.2s;">2+ Years Experience</div>
-            <div class="stat-item reveal-up" style="transition-delay: 0.3s;">400M+ Views Generated</div>
+            <div class="stat-item reveal-up" style="transition-delay: 0.3s;">30M+ Views on Top Projects</div>
             <div class="stat-item reveal-up" style="transition-delay: 0.4s;">50+ Creators Served</div>
             <div class="stat-item reveal-up" style="transition-delay: 0.5s;">Performance Focused Strategy</div>
         </div>
