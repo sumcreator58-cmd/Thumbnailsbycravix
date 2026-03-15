@@ -13,7 +13,8 @@
             --gold: #d4af37;
             --gold-light: #f3e5ab;
             --gold-dark: #b5952f;
-            --card-bg: rgba(26, 26, 26, 0.6);
+            /* FIX: Changed from transparent rgba to a solid dark color to prevent scroll lag */
+            --card-bg: #1c1c1c; 
             --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             --premium-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -120,13 +121,15 @@
         .reveal-up {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            /* FIX: Sped up animation from 0.8s to 0.4s */
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal-scale {
             opacity: 0;
             transform: scale(0.95);
-            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            /* FIX: Sped up animation from 1s to 0.5s */
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal-up.is-visible {
@@ -223,7 +226,7 @@
 
         .stat-item {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
+            /* FIX: Removed backdrop-filter to prevent scroll lag */
             padding: 1.5rem;
             border-radius: 8px;
             border-left: 4px solid var(--gold);
@@ -306,7 +309,7 @@
 
         .pricing-card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
+            /* FIX: Removed backdrop-filter to prevent scroll lag */
             border-radius: 12px;
             padding: 2.5rem 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -406,7 +409,7 @@
 
         .contact-card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
+            /* FIX: Removed backdrop-filter to prevent scroll lag */
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 8px;
             padding: 1.5rem;
@@ -538,7 +541,7 @@
         <h1 class="brand-title reveal-up">CRAVIX GFX</h1>
         <p class="subtitle reveal-up" style="transition-delay: 0.1s;">Crafting High Impact Thumbnails for Global Creators.</p>
         
-        <div class="video-wrapper reveal-up" style="transition-delay: 0.3s;">
+        <div class="video-wrapper reveal-up" style="transition-delay: 0.2s;">
             <h3 class="gold-text">How CRAVIX GFX Helps Creators Dominate Click Through Rate</h3>
             
             <div class="video-container">
@@ -551,7 +554,7 @@
             <p>Watch this short presentation to understand our creative process, performance strategy, and the impact our thumbnails deliver.</p>
         </div>
 
-        <div class="hero-btn-container reveal-up" style="transition-delay: 0.4s;">
+        <div class="hero-btn-container reveal-up" style="transition-delay: 0.3s;">
             <a href="#contact" class="btn">Book a Strategy Call</a>
         </div>
     </section>
@@ -566,11 +569,11 @@
         </div>
 
         <div class="authority-stats">
-            <div class="stat-item reveal-up" style="transition-delay: 0.2s;">2+ Years Experience</div>
-            <div class="stat-item reveal-up" style="transition-delay: 0.3s;">400M+ Views Generated</div>
-            <div class="stat-item reveal-up" style="transition-delay: 0.4s;">50+ Creators Served</div>
-            <div class="stat-item reveal-up" style="transition-delay: 0.5s;">Performance Focused Strategy</div>
-            <div class="stat-item reveal-up" style="transition-delay: 0.6s;">30M+ Views on Top Projects</div>
+            <div class="stat-item reveal-up" style="transition-delay: 0.1s;">2+ Years Experience</div>
+            <div class="stat-item reveal-up" style="transition-delay: 0.2s;">400M+ Views Generated</div>
+            <div class="stat-item reveal-up" style="transition-delay: 0.3s;">50+ Creators Served</div>
+            <div class="stat-item reveal-up" style="transition-delay: 0.4s;">Performance Focused Strategy</div>
+            <div class="stat-item reveal-up" style="transition-delay: 0.5s;">30M+ Views on Top Projects</div>
         </div>
     </section>
 
@@ -606,7 +609,7 @@
         </div>
 
         <div class="pricing-grid">
-            <div class="pricing-card reveal-up" style="transition-delay: 0.2s;">
+            <div class="pricing-card reveal-up" style="transition-delay: 0.1s;">
                 <h3>Starter</h3>
                 <ul>
                     <li>1 Custom Thumbnail</li>
@@ -618,7 +621,7 @@
                 <div class="price">$6</div>
             </div>
 
-            <div class="pricing-card growth-card reveal-up" style="transition-delay: 0.3s;">
+            <div class="pricing-card growth-card reveal-up" style="transition-delay: 0.2s;">
                 <div class="popular-badge">Most Popular</div>
                 <h3>Growth</h3>
                 <ul>
@@ -630,7 +633,7 @@
                 <div class="price">$20</div>
             </div>
 
-            <div class="pricing-card reveal-up" style="transition-delay: 0.4s;">
+            <div class="pricing-card reveal-up" style="transition-delay: 0.3s;">
                 <h3>Monthly Plan</h3>
                 <ul>
                     <li>15 Thumbnails per Month</li>
@@ -653,15 +656,15 @@
         </div>
 
         <div class="contact-cards text-center">
-            <a href="https://wa.me/917667292499" target="_blank" class="contact-card reveal-up" style="transition-delay: 0.3s;">
-                <h4>WhatsApp</h4>
-                <p>+91 7667292499</p>
-            </a>
-            <a href="mailto:cravixgfx@gmail.com" class="contact-card reveal-up" style="transition-delay: 0.4s;">
+            <a href="mailto:cravixgfx@gmail.com" class="contact-card reveal-up" style="transition-delay: 0.1s;">
                 <h4>Email</h4>
                 <p>cravixgfx@gmail.com</p>
             </a>
-            <a href="https://instagram.com/cravix_gfx" target="_blank" class="contact-card reveal-up" style="transition-delay: 0.5s;">
+            <a href="https://t.me/cravix_gfx" target="_blank" class="contact-card reveal-up" style="transition-delay: 0.2s;">
+                <h4>Telegram</h4>
+                <p>@cravix_gfx</p>
+            </a>
+            <a href="https://instagram.com/cravix_gfx" target="_blank" class="contact-card reveal-up" style="transition-delay: 0.3s;">
                 <h4>Instagram</h4>
                 <p>@cravix_gfx</p>
             </a>
